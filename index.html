@@ -1,158 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jadoo Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jadoo — Travel & Discover</title>
+  <meta name="description"
+    content="Jadoo - Travel & Discover. Book your trip in minutes, get full control for much longer. Explore the world with us." />
+  <meta name="author" content="Mark Yacoub">
+  <link rel="shortcut icon" href="./images/download.ico" type="image/x-icon">
+
+  <!-- Font Awesome - Required for icons (scroll-to-top, social icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <!-- CSS FILES - CORRECT ORDER MATTERS -->
+  <link rel="stylesheet" href="./css/variables.css">
   <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/Authentication,Payment,Modal.css">
+  <link rel="stylesheet" href="./css/mobile.css" />
+
+  <!-- ADD to <head> -->
+  <meta name="description"
+    content="Jadoo Travel — Book flights, hotels, and dream destinations in minutes. Explore the world with ease.">
+  <meta property="og:title" content="Jadoo — Travel & Discover">
+  <meta property="og:description" content="Book your trip in minutes. Explore amazing destinations worldwide.">
+  <meta property="og:image" content="./images/og-image.jpg">
+  <meta property="og:url" content="https://jadoo.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Preconnect to CDNs for performance -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
 </head>
+
 <body>
 
-    <div class="container-first-page">
-    <img src="./images/Decore.png" class="background-color-img">
-  <header>
-    <nav class="navbar">
-      <div class="logo">Jadoo</div>
-      <ul class="nav-links">
-        <li><a href="#">Destinations</a></li>
-        <li><a href="#">Hotels</a></li>
-        <li><a href="#">Flights</a></li>
-        <li><a href="#">Bookings</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="#" class="login">Login</a>
-        <a href="#" class="signup">Sign up</a>
-        <span class="lang">EN</span>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div class="hero-text">
-      <h4>Best destinations around the world</h4>
-      <h1>
-        Travel, <span class="underline">enjoy</span><br />
-        and live a new <br />
-        and full life
-      </h1>
-      <p>
-        Built Wicket longer admire do barton vanity itself do in it. <br />
-        Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.
-      </p>
-      <div class="hero-buttons">
-        <a href="#" class="btn-primary">Find out more</a>
-        <a href="#" class="btn-demo">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
-        </svg>
-            Play Demo
-        </a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="./images/Traveller 1.png" alt="Traveler Girl" class="Traveler-Girl" />
-      <img src="./images/plane.png" class="plane plane1" />
-      <img src="./images/plane.png" class="plane plane2" />
-    </div>
-  </section>
-    </div>
-    <section class="services-section">
-  <p class="category">CATEGORY</p>
-  <h2 class="title">We Offer Best Services</h2>
-
-  <div class="services-cards">
-    <div class="card">
-      <img src="./images/Group 48.png" alt="Weather Icon" />
-      <h3>Calculated Weather</h3>
-      <p>Built Wicket longer admire do barton vanity itself do in it.</p>
-    </div>
-    <div class="card active">
-      <img src="./images/plane.png" alt="Plane Icon" />
-      <h3>Best Flights</h3>
-      <p>Engrossed listening. Park gate sell they west hard for the.</p>
-    </div>
-    <div class="card">
-      <img src="./images/Group 50.png" alt="Microphone Icon" />
-      <h3>Local Events</h3>
-      <p>Barton vanity itself do in it. Preferred to men it engrossed listening.</p>
-    </div>
-    <div class="card">
-      <img src="./images/power-supply 1.png" alt="Gear Icon" />
-      <h3>Customization</h3>
-      <p>We deliver outsourced aviation services for military customers</p>
+  <!-- Page Loader (shows while page loads) -->
+  <div class="page-loader" id="pageLoader">
+    <div>
+      <div class="spinner"></div>
+      <p class="loader-text">Loading...</p>
     </div>
   </div>
-</section>
-<section class="destinations-section">
-  <p class="category">Top Selling</p>
-  <h2 class="title">Top Destinations</h2>
 
-  <div class="destinations-cards">
-    <div class="destination-card">
-      <img src="./images/Rectangle 14.png" alt="Rome, Italy">
-      <div class="destination-info">
-        <div class="destination-header">
-          <h3>Rome, Italy</h3>
-          <span>$5.42k</span>
+  <!-- Skip to Content Link (accessibility) -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+
+  <div class="container-first-page">
+    <img src="./images/Decore.png" class="background-color-img"
+      alt="Decorative background image with abstract shapes and colors" loading="lazy">
+    <header>
+      <nav class="navbar">
+        <div class="logo">Jadoo</div>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="hotels.html">Hotels</a></li>
+          <li><a href="flights.html">Flights</a></li>
+          <li><a href="bookings.html">Bookings</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="#" class="login">Login</a>
+          <a href="#" class="signup">Sign up</a>
+          <span class="lang">EN</span>
         </div>
-        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
-        </svg>
-        10 Days Trip</p>
+
+        <!--  Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      </nav>
+    </header>
+
+
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="flights.html">Flights</a></li>
+        <li><a href="bookings.html">Bookings</a></li>
+        <li><a href="#" class="login">Login</a></li>
+        <li><a href="#" class="signup">Sign up</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile Menu Background Overlay -->
+    <div class="mobile-overlay-bg" id="mobileOverlay"></div>
+
+
+
+    <!-- main content -->
+
+    <main id="main-content">
+      <section class="hero" aria-label="Hero section with travel destinations and call to action">
+        <div class="hero-text">
+          <h4 class="reveal">Best destinations around the world</h4>
+          <h1>
+            Travel, <span class="underline">enjoy</span><br />
+            and live a new <br />
+            and full life
+          </h1>
+          <p class="reveal reveal-delay-2">
+            Built Wicket longer admire do barton vanity itself do in it. <br />
+            Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.
+          </p>
+          <div class="hero-buttons reveal reveal-delay-3">
+            <a href="destinations.html" class="btn-primary">Find out more</a>
+            <a href="#" class="btn-demo">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0 Z" />
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
+              </svg>
+              Play Demo
+            </a>
+          </div>
+        </div>
+        <div class="hero-image reveal reveal-delay-2">
+          <img src="./images/Traveller 1.png" alt="Traveler Girl" class="Traveler-Girl" loading="lazy">
+          <img src="./images/plane.png" alt="Decorative plane icon" class="plane plane1" loading="lazy">
+          <img src="./images/plane.png" alt="Decorative plane icon" class="plane plane2" loading="lazy">
+        </div>
+      </section>
+  </div>
+
+  <section class="services-section" id="services" aria-labelledby="services-title">
+    <p class="category">CATEGORY</p>
+    <h2 class="title reveal reveal-delay-1" id="services-title">We Offer Best Services</h2>
+
+    <div class="services-cards">
+      <div class="card reveal reveal-delay-1">
+        <img src="./images/Group 48.png" alt="Weather Icon" loading="lazy">
+        <h3>Calculated Weather</h3>
+        <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <img src="./images/plane.png" alt="Plane Icon" loading="lazy">
+        <h3>Best Flights</h3>
+        <p>Engrossed listening. Park gate sell they west hard for the.</p>
+      </div>
+      <div class="card reveal reveal-delay-3">
+        <img src="./images/Group 50.png" alt="Microphone Icon" loading="lazy">
+        <h3>Local Events</h3>
+        <p>Barton vanity itself do in it. Preferred to men it engrossed listening.</p>
+      </div>
+      <div class="card reveal reveal-delay-4">
+        <img src="./images/power-supply 1.png" alt="Gear Icon" loading="lazy">
+        <h3>Customization</h3>
+        <p>We deliver outsourced aviation services for military customers</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="destinations-section" id="destinations" aria-labelledby="dest-title">
+    <p class="category reveal">Top Selling</p>
+    <h2 class="title reveal reveal-delay-1" id="dest-title">Top Destinations</h2>
+
+    <div class="destinations-cards">
+      <div class="destination-card reveal reveal-delay-1">
+        <div class="destination-card-img">
+          <img src="./images/Rectangle 14.png" alt="Rome, Italy" loading="lazy">
+        </div>
+        <div class="destination-info">
+          <div class="destination-header">
+            <h3>Rome, Italy</h3>
+            <span>$5.42k</span>
+          </div>
+          <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+            </svg>
+            10 Days Trip</p>
         </div>
       </div>
 
-    <div class="destination-card">
-      <img src="./images/Rectangle 14.jpg" alt="London, UK">
-      <div class="destination-info">
-        <div class="destination-header">
-          <h3>London, UK</h3>
-          <span>$4.2k</span>
+      <div class="destination-card reveal reveal-delay-2">
+        <div class="destination-card-img">
+          <img src="./images/Rectangle 14.jpg" alt="London, UK" loading="lazy">
         </div>
-        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
-        </svg>
-        12 Days Trip</p>
+        <div class="destination-info">
+          <div class="destination-header">
+            <h3>London, UK</h3>
+            <span>$4.2k</span>
+          </div>
+          <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+            </svg>
+            12 Days Trip</p>
         </div>
       </div>
 
-    <div class="destination-card">
-      <img src="./images/Rectangle 14 (1).png" alt="Full Europe">
-      <div class="destination-info">
-        <div class="destination-header">
-          <h3>Full Europe</h3>
-          <span>$15k</span>
+      <div class="destination-card reveal reveal-delay-3">
+        <div class="destination-card-img">
+          <img src="./images/Rectangle 14 (1).png" alt="Full Europe" loading="lazy">
         </div>
-        <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
-        </svg>
-        28 Days Trip</p>
+        <div class="destination-info">
+          <div class="destination-header">
+            <h3>Full Europe</h3>
+            <span>$15k</span>
+          </div>
+          <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+            </svg>
+            28 Days Trip</p>
         </div>
       </div>
     </div>
-</section>
-<section class="trip-section">
+  </section>
+
+  <section class="trip-section" id="trip" aria-labelledby="trip-title">
     <div class="trip-content">
       <!-- Left Section -->
       <div class="trip-left">
-        <p class="trip-subtitle">Easy and Fast</p>
-        <h2 class="trip-title">Book Your Next Trip<br>In 3 Easy Steps</h2>
-        <div class="step">
+        <p class="trip-subtitle reveal">Easy and Fast</p>
+        <h2 class="trip-title reveal reveal-delay-1">Book Your Next Trip<br>In 3 Easy Steps</h2>
+        <div class="step reveal reveal-delay-1">
           <div class="step-icon yellow">🧳</div>
           <div class="step-info">
             <h4>Choose Destination</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</p>
           </div>
         </div>
-        <div class="step">
+        <div class="step reveal reveal-delay-2">
           <div class="step-icon red">💳</div>
           <div class="step-info">
             <h4>Make Payment</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</p>
           </div>
         </div>
-        <div class="step">
+        <div class="step reveal reveal-delay-3">
           <div class="step-icon teal">🚕</div>
           <div class="step-info">
             <h4>Reach Airport on Selected Date</h4>
@@ -162,9 +254,9 @@
       </div>
 
       <!-- Right Section -->
-      <div class="trip-right">
+      <div class="trip-right reveal reveal-delay-2">
         <div class="main-card">
-          <img src="./images/Rectangle 17.jpg" alt="Trip to Greece" class="main-img" />
+          <img src="./images/Rectangle 17.jpg" alt="Trip to Greece" class="main-img" loading="lazy">
           <div class="card-content">
             <h4>Trip To Greece</h4>
             <p>14-29 June | by Robbin J</p>
@@ -178,129 +270,144 @@
         </div>
         <div class="floating-card">
           <div class="floating-header">
-            <img src="./images/Mask Group.png" alt="Trip to Rome" class="floating-img" />
+            <img src="./images/Mask Group.png" alt="Trip to Rome" class="floating-img" loading="lazy">
             <div class="floating-text">
-            <p class="ongoing">Ongoing</p>
-            <h5>Trip to Rome</h5>
+              <p class="ongoing">Ongoing</p>
+              <h5>Trip to Rome</h5>
             </div>
           </div>
           <p class="progress"><span>40%</span> completed</p>
-           <div class="progress-bar">
-              <div class="progress-fill" style="width: 40%;"></div>
-            </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width: 40%;"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-<section class="testimonials">
-  <div class="container-testimonials">
-    <div class="testimonial-left">
-      <h5>TESTIMONIALS</h5>
-      <h2>What People Say<br>About Us.</h2>
-      <div class="dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+  <section class="testimonials"id="testimonials" aria-labelledby="testimonials-title">
+    <div class="container-testimonials">
+      <div class="testimonial-left reveal">
+        <h3>TESTIMONIALS</h3>
+        <h2>What People Say<br>About Us.</h2>
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <div class="testimonial-right reveal reveal-delay-1">
+        <div class="testimonial-card active-card">
+          <img src="./images/Image.png" alt="Profile" class="profile-img" loading="lazy">
+          <p class="quote">"On the Windows talking painted pasture yet its express parties use. Sure last upon he same
+            as knew next. Of believed or diverted no."</p>
+          <p class="author">Mike taylor</p>
+          <p class="location">Lahore, Pakistan</p>
+        </div>
+
+        <div class="testimonial-card secondary-card">
+          <p class="author">Chris Thomas</p>
+          <p class="location">CEO of Red Button</p>
+        </div>
+
+        <div class="arrows">
+          <div class="arrow-up">&#9650;</div>
+          <div class="arrow-down">&#9660;</div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="testimonial-right">
+  <section class="subscribe-section" id="subscribe" aria-labelledby="subscribe-title">
+    <div class="subscribe-content">
+      <h2 class="reveal">Subscribe to get information, latest news and other interesting offers about Jadoo</h2>
+      <form class="subscribe-form reveal reveal-delay-1" action="#" method="post" id="subscribeForm" novalidate aria-label="Email subscription form">
+        <div class="input-group">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+          </svg>
+          <input type="email" id="emailInput" placeholder="Your E-mail Address" required aria-label="Email address" autocomplete="email"/>
+        </div>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="fly-icon">
+      <img src="./images/Group 77.png" alt="plane icon" loading="lazy">
+    </div>
+  </section>
 
-      <div class="testimonial-card active-card">
-        <img src="./images/Image.png" alt="Profile" class="profile-img" />
-        <p class="quote">“On the Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no.”</p>
-        <p class="author">Mike taylor</p>
-        <p class="location">Lahore, Pakistan</p>
+  <!-- Footer Section -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-upper">
+        <div class="footer-upper-text">
+          <h2 class="logo">Jadoo.</h2>
+          <p>Book your trip in minute, get full<br>Control for much longer.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Company</h4>
+            <ul>
+              <li><a href="">About</a></li>
+              <li><a href="">Careers</a></li>
+              <li><a href="">Mobile</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="">Help/FAQ</a></li>
+              <li><a href="">Press</a></li>
+              <li><a href="">Affilates</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>More</h4>
+            <ul>
+              <li><a href="">Airlinefees</a></li>
+              <li><a href="">Airline</a></li>
+              <li><a href="">Low fare tips</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <div class="testimonial-card secondary-card">
-        <p class="author">Chris Thomas</p>
-        <p class="location">CEO of Red Button</p>
-      </div>
-
-      <div class="arrows">
-        <div class="arrow-up">&#9650;</div>
-        <div class="arrow-down">&#9660;</div>
+      <div class="footer-lower">
+        <div class="footerleft">
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <p>Discover our app</p>
+          <div class="app-icons">
+            <img src="./images/Google Play.png" alt="Google Play" loading="lazy" />
+            <img src="./images/Play Store.png" alt="Apple Store" loading="lazy" />
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="partners">
-    <img src="./images/image 27.png" alt="Axon" />
-    <img src="./images/image 29.png" alt="Expedia" />
-    <img src="./images/image 28.png" alt="Jetstar" />
-    <img src="./images/image 30.png" alt="Qantas" />
-    <img src="./images/image 31.png" alt="Alitalia" />
-  </div>
-</section>
-
-<section class="subscribe-section">
-  <div class="subscribe-content">
-    <h2>Subscribe to get information, latest news and other<br>interesting offers about Jadoo</h2>
-    <form class="subscribe-form">
-      <div class="input-group">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-        </svg>
-        <input type="email" placeholder="Your email" required />
-      </div>
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-  <div class="fly-icon">
-    <img src="./images/Group 77.png" alt="plane icon" />
-  </div>
-</section>
-
-<!-- Footer Section -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <h2>Jadoo.</h2>
-      <p>Book your trip in minute, get full<br>Control for much longer.</p>
+    <div class="footer-bottom">
+      <p class="footer-bottom-left">Book your trip in minute, enjoy your journey</p>
+      <p class="footer-bottom-right"> © 2026 Jadoo.com. All rights reserved. · <a href="">Terms of Service</a> · <a
+          href="">Privacy Policy</a></p>
     </div>
-    <div class="footer-links">
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li>About</li>
-          <li>Careers</li>
-          <li>Mobile</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li>Help/FAQ</li>
-          <li>Press</li>
-          <li>Affilates</li>
-        </ul>
-      </div>
-      <div>
-        <h4>More</h4>
-        <ul>
-          <li>Airlinefees</li>
-          <li>Airline</li>
-          <li>Low fare tips</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-right">
-      <div class="social-icons">
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-twitter"></i>
-      </div>
-      <img src="./images/Social.png" alt="">
-      <p>Discover our app</p>
-      <div class="app-icons">
-        <img src="./images/Google Play.png" alt="Google Play"/>
-        <img src="./images/Play Store.png" alt="Apple Store"/>
-      </div>
-    </div>
-  </div>
-  <p class="copyright">All rights reserved@jadoo.co</p>
-</footer>
+  </footer>
+
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- FIXED SCRIPT PATHS - CHANGED FROM /js/ TO ./js/ -->
+  <script src="./js/main.js"></script>
+  <script src="./js/mobile.js"></script>
+  </main>
+
 </body>
+
 </html>

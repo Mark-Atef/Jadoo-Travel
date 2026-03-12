@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings - Jadoo Travel</title>
+  <link rel="shortcut icon" href="./images/download.ico" type="image/x-icon">
+
+  <!-- Font Awesome - Required for icons (scroll-to-top, social icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/Authentication_Payment_Modal.css">
+  <link rel="stylesheet" href="./css/bookings.css">
+  <link rel="stylesheet" href="./css/mobile.css">
+
+  <!-- ADD to <head> -->
+  <meta name="description"
+    content="Jadoo Travel — Book flights, hotels, and dream destinations in minutes. Explore the world with ease.">
+  <meta property="og:title" content="Jadoo — Travel & Discover">
+  <meta property="og:description" content="Book your trip in minutes. Explore amazing destinations worldwide.">
+  <meta property="og:image" content="./images/og-image.jpg">
+  <meta property="og:url" content="https://jadoo.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Preconnect to CDNs for performance -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+</head>
+
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div>
+      <div class="spinner"></div>
+      <p class="loader-text">Loading...</p>
+    </div>
+  </div>
+
+  <header>
+    <nav class="navbar scrolled">
+      <div class="logo">Jadoo</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="flights.html">Flights</a></li>
+        <li><a href="bookings.html" class="active">Bookings</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="login">Login</a>
+        <a href="#" class="signup">Sign up</a>
+        <span class="lang">EN</span>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="hotels.html">Hotels</a></li>
+      <li><a href="flights.html">Flights</a></li>
+      <li><a href="bookings.html">Bookings</a></li>
+      <li><a href="#" class="login">Login</a></li>
+      <li><a href="#" class="signup">Sign up</a></li>
+    </ul>
+  </div>
+  <div class="mobile-overlay-bg" id="mobileOverlay"></div>
+
+  <!-- DASHBOARD HEADER -->
+  <section class="dashboard-header">
+    <div class="dashboard-header-content">
+      <div class="welcome">
+        <h1>Welcome back, <span id="userName">Traveler</span>! 👋</h1>
+        <p>Manage your trips and explore new destinations</p>
+      </div>
+
+      <div class="stats-cards">
+        <div class="stat-card">
+          <div class="stat-icon">📅</div>
+          <div class="stat-info">
+            <div class="stat-number" id="upcomingCount">0</div>
+            <div class="stat-label">Upcoming Trips</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌍</div>
+          <div class="stat-info">
+            <div class="stat-number" id="totalTrips">0</div>
+            <div class="stat-label">Total Trips</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-info">
+            <div class="stat-number" id="totalSpent">$0</div>
+            <div class="stat-label">Total Spent</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN DASHBOARD -->
+  <main class="dashboard-main">
+
+    <!-- TABS NAVIGATION -->
+    <div class="tabs-nav" role="tablist" aria-label="Booking sections">
+      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="upcoming-tab" id="tap-upcoming" data-tab="upcoming">Upcoming Trips</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="past-tab" id="tap-past" data-tab="past">Past Trips</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="favorites-tab" id="tap-favorites" data-tab="favorites">Favorites</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="profile-tab" id="tap-profile" data-tab="profile">Profile</button>
+    </div>
+
+    <!-- TAB CONTENT -->
+    <div class="tab-content active" id="upcoming-tab" role="tabpanel" aria-labelledby="tap-upcoming">
+      <div class="trips-grid" id="upcomingTrips">
+        <!-- Upcoming trips loaded by JS -->
+      </div>
+    </div>
+
+    <div class="tab-content" id="past-tab">
+      <div class="trips-grid" id="pastTrips">
+        <!-- Past trips loaded by JS -->
+      </div>
+    </div>
+
+    <div class="tab-content" id="favorites-tab">
+      <h2>Saved Destinations</h2>
+      <div class="favorites-grid" id="favoritesGrid">
+        <!-- Favorites loaded by JS -->
+      </div>
+    </div>
+
+    <div class="tab-content" id="profile-tab">
+      <div class="profile-section">
+        <h2>Personal Information</h2>
+        <form class="profile-form" id="profileForm">
+          <div class="form-group">
+            <label for="profileName">Full Name</label>
+            <input type="text" id="profileName" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="profileEmail">Email</label>
+            <input type="email" id="profileEmail" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="profilePhone">Phone</label>
+            <input type="tel" id="profilePhone" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="profilePassport">Passport Number</label>
+            <input type="text" id="profilePassport" autocomplete="passport">
+          </div>
+          <button type="submit" class="btn-primary">Update Profile</button>
+        </form>
+
+        <h2 style="margin-top:var(--spacing-xl);">Payment Methods</h2>
+        <div class="payment-methods">
+          <div class="payment-card">
+            <span>💳 Visa ending in 4242</span>
+            <div>
+              <button class="btn-edit">Edit</button>
+              <button class="btn-remove">Remove</button>
+            </div>
+          </div>
+          <button class="btn-add-payment">+ Add Payment Method</button>
+        </div>
+
+        <h2 style="margin-top:var(--spacing-xl);">Preferences</h2>
+        <div class="preferences">
+          <div class="pref-item">
+            <label>Currency</label>
+            <select>
+              <option>USD $</option>
+              <option>EUR €</option>
+              <option>GBP £</option>
+            </select>
+          </div>
+          <div class="pref-item">
+            <label>Language</label>
+            <select>
+              <option>English</option>
+              <option>العربية</option>
+            </select>
+          </div>
+          <div class="pref-item">
+            <label>Notifications</label>
+            <div style="display:flex;gap:var(--spacing-md);">
+              <label><input type="checkbox" checked> Email</label>
+              <label><input type="checkbox" checked> SMS</label>
+              <label><input type="checkbox"> Push</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- TRIP DETAILS MODAL -->
+  <div class="trip-modal" id="tripModal">
+    <div class="trip-modal-content">
+      <button class="trip-modal-close">&times;</button>
+      <div class="trip-modal-body">
+        <!-- Content loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-upper">
+        <div class="footer-upper-text">
+          <h2 class="logo">Jadoo.</h2>
+          <p>Book your trip in minute, get full<br>Control for much longer.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Company</h4>
+            <ul>
+              <li><a href="">About</a></li>
+              <li><a href="">Careers</a></li>
+              <li><a href="">Mobile</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="">Help/FAQ</a></li>
+              <li><a href="">Press</a></li>
+              <li><a href="">Affilates</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>More</h4>
+            <ul>
+              <li><a href="">Airlinefees</a></li>
+              <li><a href="">Airline</a></li>
+              <li><a href="">Low fare tips</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-lower">
+        <div class="footerleft">
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <p>Discover our app</p>
+          <div class="app-icons">
+            <img src="./images/Google Play.png" alt="Google Play" loading="lazy" />
+            <img src="./images/Play Store.png" alt="Apple Store" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-left">Book your trip in minute, enjoy your journey</p>
+      <p class="footer-bottom-right"> © 2026 Jadoo.com. All rights reserved. · <a href="">Terms of Service</a> · <a
+          href="">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop">↑</button>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/bookings.js"></script>
+  <script src="./js/mobile.js"></script>
+</body>
+
+</html>

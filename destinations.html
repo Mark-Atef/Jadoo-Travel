@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations - Jadoo Travel</title>
+
+  <link rel="shortcut icon" href="./images/download.ico" type="image/x-icon">
+
+  <!-- Font Awesome - Required for icons (scroll-to-top, social icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/Authentication,Payment,Modal.css">
+  <link rel="stylesheet" href="./css/destinations.css">
+  <link rel="stylesheet" href="./css/mobile.css">
+
+  <!-- ADD to <head> -->
+  <meta name="description"
+    content="Jadoo Travel — Book flights, hotels, and dream destinations in minutes. Explore the world with ease.">
+  <meta property="og:title" content="Jadoo — Travel & Discover">
+  <meta property="og:description" content="Book your trip in minutes. Explore amazing destinations worldwide.">
+  <meta property="og:image" content="./images/og-image.jpg">
+  <meta property="og:url" content="https://jadoo.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Preconnect to CDNs for performance -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+</head>
+
+<body>
+  <!-- Page Loader (shows while page loads) -->
+  <div class="page-loader" id="pageLoader">
+    <div>
+      <div class="spinner"></div>
+      <p class="loader-text">Loading...</p>
+    </div>
+  </div>
+
+  <!-- Skip to Content Link (accessibility) -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">Jadoo</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html" class="active">Destinations</a></li>
+        <li><a href="hotels.html">Hotels</a></li>
+        <li><a href="flights.html">Flights</a></li>
+        <li><a href="bookings.html">Bookings</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="login">Login</a>
+        <a href="#" class="signup">Sign up</a>
+        <span class="lang">EN</span>
+      </div>
+
+      <!--  Hamburger Icon -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+
+    </nav>
+  </header>
+
+
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="hotels.html">Hotels</a></li>
+      <li><a href="flights.html">Flights</a></li>
+      <li><a href="bookings.html">Bookings</a></li>
+      <li><a href="#" class="login">Login</a></li>
+      <li><a href="#" class="signup">Sign up</a></li>
+    </ul>
+  </div>
+
+  <!-- Mobile Menu Background Overlay -->
+  <div class="mobile-overlay-bg" id="mobileOverlay"></div>
+
+  <!-- HERO SECTION -->
+  <section class="dest-hero">
+    <div class="dest-hero-content">
+      <h1>Explore Amazing Destinations</h1>
+      <p>Discover your next adventure</p>
+
+      <!-- SEARCH BAR -->
+      <div class="dest-search">
+        <div class="search-field">
+          <label>📍 Where</label>
+          <input type="text" placeholder="Destination" id="searchDestination">
+        </div>
+        <div class="search-field">
+          <label>📅 When</label>
+          <input type="date" id="searchDate">
+        </div>
+        <div class="search-field">
+          <label>👥 Travelers</label>
+          <select id="searchTravelers">
+            <option>1 Traveler</option>
+            <option>2 Travelers</option>
+            <option>3+ Travelers</option>
+          </select>
+        </div>
+        <button class="btn-primary" id="searchBtn">Search</button>
+      </div>
+
+      <!-- QUICK FILTERS -->
+      <div class="quick-filters">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="beach">🏖️ Beach</button>
+        <button class="filter-chip" data-filter="mountain">🏔️ Mountain</button>
+        <button class="filter-chip" data-filter="city">🏙️ City</button>
+        <button class="filter-chip" data-filter="cultural">🎭 Cultural</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="dest-main">
+
+    <!-- FILTER SIDEBAR -->
+    <aside class="filter-sidebar">
+      <h3>Filters</h3>
+
+      <!-- PRICE RANGE -->
+      <div class="filter-group">
+        <label>Price Range</label>
+        <input type="range" min="100" max="10000" value="5000" id="priceRange">
+        <div class="range-values">
+          <span>$100</span>
+          <span id="priceValue">$5000</span>
+        </div>
+      </div>
+
+      <!-- DURATION -->
+      <div class="filter-group">
+        <label>Trip Duration</label>
+        <label class="checkbox-label">
+          <input type="checkbox" name="duration" value="week"> 1 Week
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" name="duration" value="2weeks"> 2 Weeks
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" name="duration" value="month"> 1 Month+
+        </label>
+      </div>
+
+      <!-- ACTIVITIES -->
+      <div class="filter-group">
+        <label>Activities</label>
+        <label class="checkbox-label">
+          <input type="checkbox" name="activity" value="adventure"> Adventure
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" name="activity" value="relax"> Relaxation
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" name="activity" value="cultural"> Cultural
+        </label>
+      </div>
+
+      <!-- CONTINENT -->
+      <div class="filter-group">
+        <label>Continent</label>
+        <select id="continentFilter">
+          <option value="all">All Continents</option>
+          <option value="europe">Europe</option>
+          <option value="asia">Asia</option>
+          <option value="africa">Africa</option>
+          <option value="americas">Americas</option>
+          <option value="oceania">Oceania</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" id="applyFilters">Apply Filters</button>
+      <button class="btn-secondary" id="resetFilters">Reset</button>
+    </aside>
+
+    <!-- DESTINATIONS GRID -->
+    <div class="dest-content">
+      <div class="dest-header">
+        <h2><span id="resultCount">24</span> destinations found</h2>
+        <div class="dest-controls">
+          <select id="sortBy">
+            <option value="popular">Most Popular</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="duration">Duration</option>
+          </select>
+          <div class="view-toggle">
+            <button class="view-btn active" data-view="grid">⊞</button>
+            <button class="view-btn" data-view="list">≡</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-grid" id="destGrid">
+        <!-- Destinations will be loaded here by JS -->
+      </div>
+
+      <button class="btn-load-more" id="loadMore">Load More</button>
+    </div>
+  </main>
+
+  <!-- FOOTER (same as index.html) -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-upper">
+        <div class="footer-upper-text">
+          <h2 class="logo">Jadoo.</h2>
+          <p>Book your trip in minute, get full<br>Control for much longer.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>Company</h4>
+            <ul>
+              <li><a href="">About</a></li>
+              <li><a href="">Careers</a></li>
+              <li><a href="">Mobile</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="">Help/FAQ</a></li>
+              <li><a href="">Press</a></li>
+              <li><a href="">Affilates</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>More</h4>
+            <ul>
+              <li><a href="">Airlinefees</a></li>
+              <li><a href="">Airline</a></li>
+              <li><a href="">Low fare tips</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-lower">
+        <div class="footerleft">
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <p>Discover our app</p>
+          <div class="app-icons">
+            <img src="./images/Google Play.png" alt="Google Play" loading="lazy" />
+            <img src="./images/Play Store.png" alt="Apple Store" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-left">Book your trip in minute, enjoy your journey</p>
+      <p class="footer-bottom-right"> © 2026 Jadoo.com. All rights reserved. · <a href="">Terms of Service</a> · <a
+          href="">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+
+  <script src="./js/main.js"></script>
+  <script src="./js/destinations.js"></script>
+  <script src="./js/mobile.js"></script>
+</body>
+
+</html>
