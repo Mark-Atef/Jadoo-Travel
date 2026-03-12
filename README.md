@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="./images/download.ico" width="60" alt="Jadoo Logo" />
 
 # ✈️ Jadoo — Travel & Discover
 
