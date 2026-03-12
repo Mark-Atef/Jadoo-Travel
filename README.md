@@ -234,7 +234,7 @@ open index.html
 | | |
 |--|--|
 | 🌐 **Live Demo** | [mark-atef.github.io/Landing-Page-Project](https://mark-atef.github.io/Landing-Page-Project/) |
-| 📁 **Repository** | [github.com/Mark-Atef/Landing-Page-Project](https://github.com/Mark-Atef/Landing-Page-Project) |
+| 📁 **Repository** | (https://github.com/Mark-Atef/Jadoo-Travel.git) |
 
 ---
 
