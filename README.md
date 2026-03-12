@@ -246,7 +246,7 @@ Feel free to reach out for feedback, collaboration, or questions:
 |----------|------|
 | 📧 Email | [yacoub.markatef@gmail.com](mailto:yacoub.markatef@gmail.com) |
 | 💼 LinkedIn | [linkedin.com/in/mark-yacoub-005711255](https://www.linkedin.com/in/mark-yacoub-005711255) |
-| 🐙 GitHub | [github.com/Mark-Atef](https://github.com/Mark-Atef) |
+| 🐙 GitHub | github.com/Mark-Atef](https://github.com/Mark-Atef |
 
 ---
 
