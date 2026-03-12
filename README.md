@@ -5,8 +5,8 @@
 
 **A fully responsive, multi-page travel web application built with vanilla HTML, CSS, and JavaScript.**
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-f1a501?style=for-the-badge)](https://mark-atef.github.io/Landing-Page-Project/)
-[![Repository](https://img.shields.io/badge/📁_Repository-GitHub-14183e?style=for-the-badge)](https://github.com/Mark-Atef/Landing-Page-Project)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-f1a501?style=for-the-badge)]([https://mark-atef.github.io/Jadoo-Travel/])
+[![Repository](https://img.shields.io/badge/📁_Repository-GitHub-14183e?style=for-the-badge)](https://github.com/Mark-Atef/Jadoo-Travel.git)
 [![License](https://img.shields.io/badge/📄_License-Educational-df6951?style=for-the-badge)](#license)
 
 </div>
@@ -233,8 +233,8 @@ open index.html
 
 | | |
 |--|--|
-| 🌐 **Live Demo** | [mark-atef.github.io/Jadoo-Travel](https://mark-atef.github.io/Jadoo-Travel/) |
-| 📁 **Repository** | [https://github.com/Mark-Atef/Jadoo-Travel.git] |
+| 🌐 **Live Demo** | [mark-atef.github.io/Jadoo-Travel-Live](https://mark-atef.github.io/Jadoo-Travel/) |
+| 📁 **Repository** | [mark-atef.github.io/Jadoo-Travel-Repo](https://github.com/Mark-Atef/Jadoo-Travel.git) |
 
 ---
 
@@ -246,7 +246,7 @@ Feel free to reach out for feedback, collaboration, or questions:
 |----------|------|
 | 📧 Email | [yacoub.markatef@gmail.com](mailto:yacoub.markatef@gmail.com) |
 | 💼 LinkedIn | [linkedin.com/in/mark-yacoub-005711255](https://www.linkedin.com/in/mark-yacoub-005711255) |
-| 🐙 GitHub | github.com/Mark-Atef](https://github.com/Mark-Atef |
+| 🐙 GitHub | [github.com/Mark-Atef](https://github.com/Mark-Atef |
 
 ---
 
